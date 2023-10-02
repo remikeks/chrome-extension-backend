@@ -4,7 +4,7 @@ import uuid
 
 
 class RecordedVideo(models.Model):
-    id = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
+    id = models.UUIDField(default=uuid.uuid4, editable=False, unique=True, primary_key=True)
     video_file = models.FileField(upload_to='recorded_videos/')
     transcription = models.TextField(blank=True)
     chunk_paths = ArrayField(models.CharField(max_length=255), blank=True, null=True)
